@@ -142,6 +142,12 @@ vim.g.NERDTreeShowHidden=1
 -- REMAPS
 --
 
+-- Select all
+vim.keymap.set('n', "<C-a>", 'ggVG')
+
+-- Comment selected
+vim.keymap.set('v', '<leader>/', '<Esc>:normal gvgc<CR>')
+
 -- Resize split windows using arrow keys by pressing:
 -- CTRL+UP, CTRL+DOWN, CTRL+LEFT, or CTRL+RIGHT.
 
@@ -153,6 +159,7 @@ vim.keymap.set('n', "<c-right>", "<c-w>>")
 -- Open split view
 vim.keymap.set('n', "<c-v>", "<c-w>v")
 
+-- Search matches
 vim.keymap.set('n', '<leader>\\', ':nohlsearch<CR>')
 vim.keymap.set('n', '<c-z>', ':undo<CR>')
 vim.keymap.set('n', 'n', 'nzz')
