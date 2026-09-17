@@ -71,7 +71,7 @@ vim.api.nvim_create_autocmd('FileType', {
 
 vim.opt.completeopt:append("preview")
 vim.opt.shortmess:append("c")
-vim.opt.clipboard:append("unnamedplus")
+vim.opt.clipboard:append("unnamedplus") --append system clipboard to nvim clipboard
 vim.opt.termguicolors = true -- Enable true color
 vim.opt.statusline:prepend("%{coc#status()}%{get(b:,'coc_current_function','')}")
 
@@ -127,13 +127,13 @@ ccc.setup({
 -- coc settings
 require("coc")
 
+
 --
 -- NERDTREE
--- Close NERDTREE if it is the only window in the buffer
-
+-- 
 
 -- vim.keymap.set('n', "<c-v>", ":NERDTree<CR>")
-vim.keymap.set('n', "<c-c>", ":NERDTreeToggle<CR>")
+vim.keymap.set('n', "<c-c>", ":NERDTreeToggle<CR>") -- toggle NERDTREE on or off
 vim.g.NERDTreeQuitOnOpen=1
 vim.g.NERDTreeShowHidden=1
 
@@ -166,12 +166,12 @@ vim.keymap.set('n', 'n', 'nzz')
 vim.keymap.set('n', 'N', 'Nzz')
 vim.keymap.set('n', 'Y', 'y$')
 vim.keymap.set('i', '<Tab>', function()
-  if vim.fn['coc#pum#visible']() == 1 then return vim.fn['coc#_select_confirm']() 
-  else return '<Tab>' end 
+  if vim.fn['coc#pum#visible']() == 1 then return vim.fn['coc#_select_confirm']() -- confirm coc suggestion if avaliable
+  else return '<Tab>' end -- regular tab button behaviour
   end, { silent = true, noremap = true, expr = true, replace_keycodes = true })
 vim.keymap.set('i', '<Enter>', function()
-  if vim.fn['coc#pum#visible']() == 1 then return vim.fn['coc#_select_confirm']() 
-  else return '<CR>' end 
+  if vim.fn['coc#pum#visible']() == 1 then return vim.fn['coc#_select_confirm']() -- confirm coc suggestion if avaliable
+  else return '<CR>' end -- regular enter button behaviour
   end, { silent = true, noremap = true, expr = true, replace_keycodes = true })
 
 -- ident
