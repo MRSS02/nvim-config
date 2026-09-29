@@ -107,8 +107,13 @@ Plug('sbdchd/neoformat')
 Plug('APZelos/blamer.nvim')
 Plug('neoclide/coc.nvim', {['branch'] = 'release'})
 Plug('uga-rosa/ccc.nvim')
-
+Plug('wsdjeg/git.nvim', {['depends'] = {
+            { 'wsdjeg/job.nvim' },      -- Required
+            { 'wsdjeg/notify.nvim' },   -- Recommended
+        }})
 vim.call('plug#end')
+-- End of plugin list
+
 
 --ccc settings
 local ccc = require("ccc")
